@@ -1,6 +1,6 @@
 # Minecraft Python
 
-## Examples
+## Exemplos
 
 Clique no nome da função para visualizar um exemplo.
 
@@ -121,21 +121,22 @@ mc.player.setPos(pos.x, pos.y+100, pos.z)
 mc.player.getTilePos()
   </summary>
 
-> Get current player's position rounded to the block (integer)
+> Obtém a posição atual do jogador (número inteiro)
 
 ```python
 
-from mcpi import minecraft
+from mcpi.minecraft import minecraft
 
-#Connect to minecraft server 127.0.0.1 as player 'steve'
-mc = minecraft.Minecraft.create(address="127.0.0.1", name="bob")
+#Conectar ao servidor 127.0.0.1 com o nome de aluno
+mc = Minecraft.create(address="127.0.0.1", name="aluno")
 
-#Get current player's position
-pos = mc.player.getTilePos()
+#guardar na variável posicao a posição atual do jogador
+posicao = mc.player.getTilePos()
 
-# Returns Vec3(52, 4, -10)
-# Can be accessed as pos.x, pos.y, and pos.z
-print pos.x, pos.y, pos.z
+# imprimir a posição x, depois y e por fim z.
+print(posicao.x)
+print(posicao.y)
+print(posicao.z)
 
 ```
 
@@ -147,20 +148,20 @@ print pos.x, pos.y, pos.z
 mc.player.setTilePos(x, y, z)
   </summary>
 
-> Set current player's position rounded to the block (supports integers)
+> Definir a nova posição de um jogador. (Somente números inteiros)
 
 ```python
 
-from mcpi import minecraft
+from mcpi.minecraft import minecraft
 
-#Connect to minecraft server 127.0.0.1 as player 'steve'
-mc = minecraft.Minecraft.create(address="127.0.0.1", name="bob")
+#Conectar ao servidor 127.0.0.1 com o nome de aluno
+mc = Minecraft.create(address="127.0.0.1", name="aluno")
 
-#Get current player's position
-pos = mc.player.getTilePos()
+#guardar na variável posicao a posição atual do jogador
+posicao = mc.player.getTilePos()
 
-#Set current player's position 100 blocks in the air
-mc.player.setTilePos(pos.x, pos.y+100, pos.z)
+#Definir a nova posição do jogador. Neste caso, iremos subir, em Y, 30 unidades do jogador.
+mc.player.setTilePos(posicao.x, posicao.y+30, posicao.z)
 
 ```
 
@@ -172,16 +173,16 @@ mc.player.setTilePos(pos.x, pos.y+100, pos.z)
 mc.postToChat("Hello World!")
   </summary>
 
-> Post any text string to chat in-game
+> Escrevar qualquer texto no Chat do jogo
 
 ```python
 
-from mcpi import minecraft
+from mcpi.minecraft import minecraft
 
-#Connect to minecraft server 127.0.0.1 as player 'steve'
-mc = minecraft.Minecraft.create(address="127.0.0.1", name="bob")
+#Conectar ao servidor 127.0.0.1 com o nome de aluno
+mc = Minecraft.create(address="127.0.0.1", name="aluno")
 
-mc.postToChat("Hello World!")
+mc.postToChat("Olá Pessoal!")
 
 ```
 
